@@ -1,0 +1,372 @@
+{
+  "model_info": {
+    "name": "Manus 1.6 ULTRA Lite",
+    "version": "1.6.0-lite",
+    "created_at": "2026-01-07T18:57:47.013416",
+    "parameters": "24B (cuantizados a 6GB)",
+    "training_tokens": "150 millones",
+    "context_window": "32K tokens",
+    "specialties": [
+      "mathematics",
+      "microinformática_hardware",
+      "microinformática_software",
+      "ingeniería",
+      "lenguaje_natural"
+    ],
+    "capabilities": [
+      "Conversación en lenguaje natural",
+      "Resolución de problemas matemáticos",
+      "Generación de código",
+      "Análisis de hardware",
+      "Optimización de software",
+      "Diseño de ingeniería",
+      "Debugging y troubleshooting",
+      "Explicaciones técnicas",
+      "Traducción técnica",
+      "Síntesis de información"
+    ],
+    "resource_requirements": {
+      "gpu_memory": "6-8GB (RTX 3060 o similar)",
+      "cpu": "4+ cores",
+      "ram": "16GB+",
+      "storage": "5GB (modelo + cache)",
+      "inference_speed": "50-100 tokens/segundo",
+      "compatible_platforms": [
+        "HuggingFace Spaces (gratuito)",
+        "Google Colab",
+        "Local GPU",
+        "CPU (lento pero funcional)"
+      ]
+    },
+    "performance_targets": {
+      "math_accuracy": "95%+",
+      "code_quality": "90%+",
+      "explanation_clarity": "95%+",
+      "language_fluency": "Native-like",
+      "response_time": "<5 segundos"
+    }
+  },
+  "config": {
+    "model_name": "Manus 1.6 ULTRA Lite",
+    "model_version": "1.6.0-lite",
+    "created_at": "2026-01-07T18:57:47.013416",
+    "architecture": {
+      "type": "Optimized Transformer with Expert Routing",
+      "name": "Manus 1.6 ULTRA Lite Architecture",
+      "layers": 32,
+      "hidden_size": 4096,
+      "intermediate_size": 11008,
+      "num_heads": 32,
+      "num_kv_heads": 8,
+      "head_dim": 128,
+      "vocab_size": 100000,
+      "max_position_embeddings": 32768,
+      "rope_theta": 10000.0,
+      "rope_scaling": {
+        "type": "linear",
+        "factor": 1.0
+      },
+      "activation_function": "silu",
+      "initializer_range": 0.02,
+      "layer_norm_eps": 1e-06,
+      "expert_configuration": {
+        "math_experts": 4,
+        "code_experts": 4,
+        "hardware_experts": 2,
+        "software_experts": 2,
+        "engineering_experts": 2,
+        "general_experts": 4
+      },
+      "routing_strategy": "learned_gating",
+      "top_k_experts": 2,
+      "expert_capacity_factor": 1.0,
+      "quantization": {
+        "enabled": true,
+        "method": "int4_nf4",
+        "compute_dtype": "float16",
+        "load_in_4bit": true,
+        "bnb_4bit_quant_type": "nf4",
+        "bnb_4bit_use_double_quant": true,
+        "bnb_4bit_compute_dtype": "float16"
+      },
+      "lora": {
+        "enabled": true,
+        "r": 16,
+        "lora_alpha": 32,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ],
+        "lora_dropout": 0.05
+      }
+    },
+    "training": {
+      "method": "RLHF con enfoque en especialidades",
+      "optimizer": "AdamW",
+      "learning_rate": 0.0002,
+      "batch_size": 32,
+      "training_tokens": 150000000,
+      "data_sources": [
+        "Qwen training data",
+        "Mistral training data",
+        "DeepSeek Math dataset",
+        "Stack Overflow (programación)",
+        "GitHub repositories",
+        "ArXiv papers (matemáticas)",
+        "IEEE papers (ingeniería)",
+        "Documentación técnica",
+        "Tutoriales de microinformática",
+        "Problemas de ingeniería resueltos"
+      ],
+      "specialization_phases": {
+        "phase_1": "Lenguaje natural fluido",
+        "phase_2": "Matemáticas avanzadas",
+        "phase_3": "Microinformática (hardware)",
+        "phase_4": "Microinformática (software)",
+        "phase_5": "Ingeniería multidisciplinaria",
+        "phase_6": "Integración y refinamiento"
+      }
+    },
+    "inference": {
+      "max_new_tokens": 2048,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 50,
+      "repetition_penalty": 1.0,
+      "use_cache": true
+    },
+    "capabilities": [
+      "Conversación en lenguaje natural",
+      "Resolución de problemas matemáticos",
+      "Generación de código",
+      "Análisis de hardware",
+      "Optimización de software",
+      "Diseño de ingeniería",
+      "Debugging y troubleshooting",
+      "Explicaciones técnicas",
+      "Traducción técnica",
+      "Síntesis de información"
+    ],
+    "specialties": {
+      "mathematics": {
+        "level": "Expert",
+        "topics": [
+          "Álgebra lineal",
+          "Cálculo diferencial e integral",
+          "Ecuaciones diferenciales",
+          "Análisis complejo",
+          "Teoría de números",
+          "Geometría algebraica",
+          "Topología",
+          "Análisis funcional",
+          "Probabilidad y estadística",
+          "Optimización"
+        ],
+        "capabilities": [
+          "Resolución de problemas complejos",
+          "Demostraciones matemáticas",
+          "Análisis numérico",
+          "Modelado matemático"
+        ]
+      },
+      "microinformática_hardware": {
+        "level": "Expert",
+        "topics": [
+          "Arquitectura de procesadores",
+          "Memoria (RAM, caché, almacenamiento)",
+          "Buses y protocolos (PCIe, USB, Ethernet)",
+          "Microcontroladores (ARM, x86, RISC-V)",
+          "FPGAs y ASICs",
+          "Sistemas embebidos",
+          "IoT y sensores",
+          "Electrónica digital",
+          "Circuitos integrados",
+          "Optimización de hardware"
+        ],
+        "capabilities": [
+          "Diseño de circuitos",
+          "Análisis de rendimiento",
+          "Optimización de consumo",
+          "Debugging de hardware"
+        ]
+      },
+      "microinformática_software": {
+        "level": "Expert",
+        "topics": [
+          "Sistemas operativos (Linux, Windows, RTOS)",
+          "Drivers y firmware",
+          "Programación en ensamblador",
+          "Optimización de bajo nivel",
+          "Gestión de memoria",
+          "Concurrencia y paralelismo",
+          "Virtualización",
+          "Contenedores",
+          "Compiladores e intérpretes",
+          "Debugging avanzado"
+        ],
+        "capabilities": [
+          "Optimización de código",
+          "Análisis de rendimiento",
+          "Debugging profundo",
+          "Reverse engineering"
+        ]
+      },
+      "ingeniería": {
+        "level": "Expert",
+        "disciplines": [
+          "Ingeniería Civil",
+          "Ingeniería Mecánica",
+          "Ingeniería Eléctrica",
+          "Ingeniería Electrónica",
+          "Ingeniería Química",
+          "Ingeniería de Software",
+          "Ingeniería de Sistemas",
+          "Ingeniería Aeronáutica",
+          "Ingeniería Biomédica",
+          "Ingeniería Industrial"
+        ],
+        "capabilities": [
+          "Diseño de sistemas",
+          "Análisis de estructuras",
+          "Simulación y modelado",
+          "Optimización de procesos",
+          "Resolución de problemas complejos"
+        ]
+      },
+      "lenguaje_natural": {
+        "level": "Expert",
+        "capabilities": [
+          "Comprensión profunda de contexto",
+          "Generación de texto fluido",
+          "Traducción multilingüe (150+ idiomas)",
+          "Análisis de sentimiento",
+          "Extracción de información",
+          "Resumen y síntesis",
+          "Generación de código desde descripciones",
+          "Explicaciones claras y precisas"
+        ]
+      }
+    },
+    "resource_requirements": {
+      "gpu_memory": "6-8GB (RTX 3060 o similar)",
+      "cpu": "4+ cores",
+      "ram": "16GB+",
+      "storage": "5GB (modelo + cache)",
+      "inference_speed": "50-100 tokens/segundo",
+      "compatible_platforms": [
+        "HuggingFace Spaces (gratuito)",
+        "Google Colab",
+        "Local GPU",
+        "CPU (lento pero funcional)"
+      ]
+    },
+    "performance_targets": {
+      "math_accuracy": "95%+",
+      "code_quality": "90%+",
+      "explanation_clarity": "95%+",
+      "language_fluency": "Native-like",
+      "response_time": "<5 segundos"
+    }
+  },
+  "specialties": {
+    "mathematics": {
+      "level": "Expert",
+      "topics": [
+        "Álgebra lineal",
+        "Cálculo diferencial e integral",
+        "Ecuaciones diferenciales",
+        "Análisis complejo",
+        "Teoría de números",
+        "Geometría algebraica",
+        "Topología",
+        "Análisis funcional",
+        "Probabilidad y estadística",
+        "Optimización"
+      ],
+      "capabilities": [
+        "Resolución de problemas complejos",
+        "Demostraciones matemáticas",
+        "Análisis numérico",
+        "Modelado matemático"
+      ]
+    },
+    "microinformática_hardware": {
+      "level": "Expert",
+      "topics": [
+        "Arquitectura de procesadores",
+        "Memoria (RAM, caché, almacenamiento)",
+        "Buses y protocolos (PCIe, USB, Ethernet)",
+        "Microcontroladores (ARM, x86, RISC-V)",
+        "FPGAs y ASICs",
+        "Sistemas embebidos",
+        "IoT y sensores",
+        "Electrónica digital",
+        "Circuitos integrados",
+        "Optimización de hardware"
+      ],
+      "capabilities": [
+        "Diseño de circuitos",
+        "Análisis de rendimiento",
+        "Optimización de consumo",
+        "Debugging de hardware"
+      ]
+    },
+    "microinformática_software": {
+      "level": "Expert",
+      "topics": [
+        "Sistemas operativos (Linux, Windows, RTOS)",
+        "Drivers y firmware",
+        "Programación en ensamblador",
+        "Optimización de bajo nivel",
+        "Gestión de memoria",
+        "Concurrencia y paralelismo",
+        "Virtualización",
+        "Contenedores",
+        "Compiladores e intérpretes",
+        "Debugging avanzado"
+      ],
+      "capabilities": [
+        "Optimización de código",
+        "Análisis de rendimiento",
+        "Debugging profundo",
+        "Reverse engineering"
+      ]
+    },
+    "ingeniería": {
+      "level": "Expert",
+      "disciplines": [
+        "Ingeniería Civil",
+        "Ingeniería Mecánica",
+        "Ingeniería Eléctrica",
+        "Ingeniería Electrónica",
+        "Ingeniería Química",
+        "Ingeniería de Software",
+        "Ingeniería de Sistemas",
+        "Ingeniería Aeronáutica",
+        "Ingeniería Biomédica",
+        "Ingeniería Industrial"
+      ],
+      "capabilities": [
+        "Diseño de sistemas",
+        "Análisis de estructuras",
+        "Simulación y modelado",
+        "Optimización de procesos",
+        "Resolución de problemas complejos"
+      ]
+    },
+    "lenguaje_natural": {
+      "level": "Expert",
+      "capabilities": [
+        "Comprensión profunda de contexto",
+        "Generación de texto fluido",
+        "Traducción multilingüe (150+ idiomas)",
+        "Análisis de sentimiento",
+        "Extracción de información",
+        "Resumen y síntesis",
+        "Generación de código desde descripciones",
+        "Explicaciones claras y precisas"
+      ]
+    }
+  },
+  "export_timestamp": "2026-01-07T18:57:47.013625"
+}
