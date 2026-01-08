@@ -1,0 +1,88 @@
+{
+  "name": "Analytics Dashboard",
+  "type": "FRAME",
+  "width": 1200,
+  "height": 800,
+  "fills": [
+    {
+      "type": "SOLID",
+      "color": {
+        "r": 0.98,
+        "g": 0.98,
+        "b": 0.99
+      }
+    }
+  ],
+  "children": [
+    {
+      "name": "Header",
+      "type": "COMPONENT",
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 64,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.1,
+            "g": 0.1,
+            "b": 0.15
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sidebar",
+      "type": "COMPONENT",
+      "x": 0,
+      "y": 64,
+      "width": 240,
+      "height": 736,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.95,
+            "g": 0.95,
+            "b": 0.98
+          }
+        }
+      ]
+    },
+    {
+      "name": "MainContent",
+      "type": "FRAME",
+      "x": 240,
+      "y": 64,
+      "width": 960,
+      "height": 736,
+      "children": [
+        {
+          "name": "Card1",
+          "type": "COMPONENT",
+          "x": 20,
+          "y": 20,
+          "width": 280,
+          "height": 200
+        },
+        {
+          "name": "Card2",
+          "type": "COMPONENT",
+          "x": 320,
+          "y": 20,
+          "width": 280,
+          "height": 200
+        },
+        {
+          "name": "Card3",
+          "type": "COMPONENT",
+          "x": 620,
+          "y": 20,
+          "width": 280,
+          "height": 200
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-08T00:25:41.985017",
+  "tests": [
+    {
+      "name": "Inicialización Básica",
+      "passed": true,
+      "message": "Modelo inicializado correctamente",
+      "timestamp": "2026-01-08T00:25:41.985026"
+    }
+  ],
+  "summary": {
+    "passed": 32,
+    "failed": 0,
+    "warnings": 0,
+    "total": 32,
+    "success_rate": 100.0
+  }
+}

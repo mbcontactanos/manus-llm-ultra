@@ -1,0 +1,72 @@
+{
+  "name": "Chat UI",
+  "type": "FRAME",
+  "width": 800,
+  "height": 600,
+  "fills": [
+    {
+      "type": "SOLID",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      }
+    }
+  ],
+  "children": [
+    {
+      "name": "Header",
+      "type": "FRAME",
+      "x": 0,
+      "y": 0,
+      "width": 800,
+      "height": 60,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.2,
+            "g": 0.6,
+            "b": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "type": "FRAME",
+      "x": 0,
+      "y": 60,
+      "width": 800,
+      "height": 480,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.98,
+            "g": 0.98,
+            "b": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "InputArea",
+      "type": "FRAME",
+      "x": 0,
+      "y": 540,
+      "width": 800,
+      "height": 60,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.95,
+            "g": 0.95,
+            "b": 0.95
+          }
+        }
+      ]
+    }
+  ]
+}

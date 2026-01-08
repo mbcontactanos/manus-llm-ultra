@@ -1,0 +1,90 @@
+{
+  "name": "Landing Page",
+  "type": "FRAME",
+  "width": 1200,
+  "height": 2000,
+  "fills": [
+    {
+      "type": "SOLID",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      }
+    }
+  ],
+  "children": [
+    {
+      "name": "Hero",
+      "type": "FRAME",
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 600,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.2,
+            "g": 0.6,
+            "b": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Features",
+      "type": "FRAME",
+      "x": 0,
+      "y": 600,
+      "width": 1200,
+      "height": 800,
+      "children": [
+        {
+          "name": "Feature1",
+          "type": "COMPONENT",
+          "x": 50,
+          "y": 50
+        },
+        {
+          "name": "Feature2",
+          "type": "COMPONENT",
+          "x": 450,
+          "y": 50
+        },
+        {
+          "name": "Feature3",
+          "type": "COMPONENT",
+          "x": 850,
+          "y": 50
+        }
+      ]
+    },
+    {
+      "name": "CTA",
+      "type": "FRAME",
+      "x": 0,
+      "y": 1400,
+      "width": 1200,
+      "height": 200,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.1,
+            "g": 0.1,
+            "b": 0.15
+          }
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "type": "FRAME",
+      "x": 0,
+      "y": 1600,
+      "width": 1200,
+      "height": 400
+    }
+  ]
+}

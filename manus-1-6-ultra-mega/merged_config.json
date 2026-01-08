@@ -1,0 +1,8 @@
+{
+  "name": "Manus-1.6-ULTRA-MEGA",
+  "architecture": "MixtureOfExperts",
+  "num_experts": 0,
+  "experts": [],
+  "routing_strategy": "load_balancing",
+  "merged_at": "2026-01-08T16:47:14.578211"
+}

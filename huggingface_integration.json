@@ -1,0 +1,161 @@
+{
+  "name": "Manus 1.6 ULTRA MEGA - HuggingFace Integration",
+  "timestamp": "2026-01-08T16:49:19.478376",
+  "models": {
+    "reasoning": [
+      {
+        "name": "DeepSeek-V3",
+        "model_id": "deepseek-ai/DeepSeek-V3",
+        "size": "671B",
+        "specialization": "Razonamiento profundo, análisis complejo",
+        "capabilities": [
+          "reasoning",
+          "analysis",
+          "problem_solving"
+        ]
+      },
+      {
+        "name": "Qwen2.5-Coder",
+        "model_id": "Qwen/Qwen2.5-Coder-32B",
+        "size": "32B",
+        "specialization": "Generación de código, debugging",
+        "capabilities": [
+          "code_generation",
+          "debugging",
+          "optimization"
+        ]
+      }
+    ],
+    "general": [
+      {
+        "name": "Llama-3.3-70B",
+        "model_id": "meta-llama/Llama-3.3-70B",
+        "size": "70B",
+        "specialization": "Propósito general, conversación",
+        "capabilities": [
+          "conversation",
+          "general_qa",
+          "summarization"
+        ]
+      },
+      {
+        "name": "Mistral-8x22B",
+        "model_id": "mistralai/Mistral-8x22B",
+        "size": "141B (MoE)",
+        "specialization": "Mixture of Experts, eficiencia",
+        "capabilities": [
+          "routing",
+          "efficiency",
+          "multi_task"
+        ]
+      }
+    ],
+    "specialized": [
+      {
+        "name": "Gemma-2-27B",
+        "model_id": "google/gemma-2-27b",
+        "size": "27B",
+        "specialization": "Instrucciones, seguridad",
+        "capabilities": [
+          "instruction_following",
+          "safety",
+          "alignment"
+        ]
+      },
+      {
+        "name": "Phi-4",
+        "model_id": "microsoft/phi-4",
+        "size": "14B",
+        "specialization": "Eficiencia, matemáticas",
+        "capabilities": [
+          "math",
+          "efficiency",
+          "reasoning"
+        ]
+      },
+      {
+        "name": "Command-R-Plus",
+        "model_id": "CohereForAI/c4ai-command-r-plus",
+        "size": "104B",
+        "specialization": "RAG, búsqueda, documentos",
+        "capabilities": [
+          "rag",
+          "retrieval",
+          "document_analysis"
+        ]
+      }
+    ],
+    "multilingual": [
+      {
+        "name": "Kimi-K2",
+        "model_id": "moonshot-ai/kimi-k2",
+        "size": "200B",
+        "specialization": "Contexto largo, multilingüe",
+        "capabilities": [
+          "long_context",
+          "multilingual",
+          "translation"
+        ]
+      },
+      {
+        "name": "Qwen-2.5-72B",
+        "model_id": "Qwen/Qwen2.5-72B",
+        "size": "72B",
+        "specialization": "Multilingüe, general",
+        "capabilities": [
+          "multilingual",
+          "general",
+          "instruction_following"
+        ]
+      }
+    ]
+  },
+  "router": {
+    "name": "Manus Model Router",
+    "version": "1.0",
+    "routing_rules": {
+      "math_problems": {
+        "primary": "Phi-4",
+        "secondary": "Qwen2.5-Coder",
+        "fallback": "Llama-3.3-70B"
+      },
+      "code_generation": {
+        "primary": "Qwen2.5-Coder",
+        "secondary": "DeepSeek-V3",
+        "fallback": "Mistral-8x22B"
+      },
+      "reasoning": {
+        "primary": "DeepSeek-V3",
+        "secondary": "Llama-3.3-70B",
+        "fallback": "Mistral-8x22B"
+      },
+      "conversation": {
+        "primary": "Llama-3.3-70B",
+        "secondary": "Qwen-2.5-72B",
+        "fallback": "Gemma-2-27B"
+      },
+      "translation": {
+        "primary": "Kimi-K2",
+        "secondary": "Qwen-2.5-72B",
+        "fallback": "Llama-3.3-70B"
+      },
+      "rag": {
+        "primary": "Command-R-Plus",
+        "secondary": "Llama-3.3-70B",
+        "fallback": "Qwen2.5-Coder"
+      }
+    },
+    "performance_metrics": {
+      "latency": "50-200ms",
+      "accuracy": "92-98%",
+      "throughput": "100+ tokens/sec"
+    }
+  },
+  "capabilities": {
+    "ensemble_queries": true,
+    "model_switching": true,
+    "load_balancing": true,
+    "fallback_routing": true,
+    "performance_monitoring": true
+  }
+}
